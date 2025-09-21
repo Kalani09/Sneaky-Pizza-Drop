@@ -1,7 +1,11 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> v1.0
+=======
+
+>>>>>>> 271d6820632ee87e1906f2d28072f9fa9508baf8
 # Godot 4+ specific ignores
 .godot/
 .nomedia
@@ -19,7 +23,12 @@ export_credentials.cfg
 data_*/
 mono_crash.*.json
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 exports/
 >>>>>>> v1.0
+=======
+
+exports/
+>>>>>>> 271d6820632ee87e1906f2d28072f9fa9508baf8
