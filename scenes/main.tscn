@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://tcr0p7k7wurn"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_8374a"]
+[ext_resource type="PackedScene" uid="uid://cx7qnlaiixsbl" path="res://scenes/level_01.tscn" id="1_go54d"]
+[ext_resource type="PackedScene" uid="uid://dygavb0vlmu62" path="res://scenes/player.tscn" id="2_kcjj4"]
+[ext_resource type="FontFile" uid="uid://d0xhcrum6dhmd" path="res://assets/ui/BadComic-Regular.otf" id="4_4mwi6"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_8374a")
+
+[node name="Level01" parent="." instance=ExtResource("1_go54d")]
+
+[node name="Player" parent="." instance=ExtResource("2_kcjj4")]
+position = Vector2(143, 856)
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_left = 1607.0
+offset_top = 19.0
+offset_right = 1872.0
+offset_bottom = 92.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0.430761, 0.793752, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("4_4mwi6")
+theme_override_font_sizes/font_size = 60
+text = "💰: 0000"
+
+[node name="LevelContainer" type="Node2D" parent="."]

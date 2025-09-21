@@ -1,0 +1,90 @@
+[gd_scene load_steps=8 format=3 uid="uid://4fh7yx4sqwg0"]
+
+[ext_resource type="Script" path="res://scripts/lose.gd" id="1_lftc6"]
+[ext_resource type="Texture2D" uid="uid://c55cy6vdwha8q" path="res://assets/ui/UI_Background.png" id="2_yc63o"]
+[ext_resource type="FontFile" uid="uid://d0xhcrum6dhmd" path="res://assets/ui/BadComic-Regular.otf" id="3_2rn11"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_txc8x"]
+texture = ExtResource("2_yc63o")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1wnuu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fllu3"]
+bg_color = Color(0.718134, 0.369541, 0.131796, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+shadow_size = 7
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pa655"]
+bg_color = Color(0.932235, 0.545345, 0.310396, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+shadow_size = 5
+shadow_offset = Vector2(0, 3)
+
+[node name="Win" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lftc6")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_txc8x")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -39.0
+offset_top = -11.5
+offset_right = 39.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.0392157, 0.533333, 0.654902, 1)
+theme_override_colors/font_outline_color = Color(0.039436, 0.535229, 0.655163, 1)
+theme_override_constants/line_spacing = 9
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 50
+theme_override_constants/shadow_outline_size = 3
+theme_override_fonts/font = ExtResource("3_2rn11")
+theme_override_font_sizes/font_size = 150
+text = "You Won !"
+horizontal_alignment = 1
+
+[node name="Menu" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1569.0
+offset_top = 898.0
+offset_right = 1879.0
+offset_bottom = 975.0
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxEmpty_1wnuu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fllu3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fllu3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_pa655")
+text = "Play Again !
+"
+
+[connection signal="pressed" from="Menu" to="." method="_on_menu_pressed"]
