@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cicmx8xt6nhmr"
+path="res://.godot/imported/04 Little Shop.ogg-836e4e223f6c4616e05c256eeb860f79.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/04 Little Shop.ogg"
+dest_files=["res://.godot/imported/04 Little Shop.ogg-836e4e223f6c4616e05c256eeb860f79.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

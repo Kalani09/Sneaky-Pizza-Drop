@@ -1,0 +1,97 @@
+[gd_scene load_steps=10 format=3 uid="uid://bjiufj5el2cj2"]
+
+[ext_resource type="Texture2D" uid="uid://x378lckinrtr" path="res://assets/ui/paper_panel_1286_x_819.png" id="1_5ve6u"]
+[ext_resource type="Script" path="res://scripts/level_02_order.gd" id="1_rlid7"]
+[ext_resource type="FontFile" uid="uid://cva6squx4xhdg" path="res://assets/ui/BadComic-Italic.otf" id="2_mgrue"]
+[ext_resource type="FontFile" uid="uid://d0xhcrum6dhmd" path="res://assets/ui/BadComic-Regular.otf" id="3_astx4"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6upta"]
+texture = ExtResource("1_5ve6u")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ygjpb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y7og4"]
+bg_color = Color(0.677153, 0.433337, 0.0374527, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+shadow_size = 7
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jjfd7"]
+bg_color = Color(0.678431, 0.435294, 0.0392157, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+shadow_size = 7
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ul50o"]
+bg_color = Color(0.832548, 0.535718, 0.065337, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+shadow_size = 5
+shadow_offset = Vector2(0, 3)
+
+[node name="Level02Order" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rlid7")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_6upta")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -855.0
+offset_top = -351.0
+offset_right = 800.0
+offset_bottom = 261.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.761208, 0.461801, 7.70092e-07, 1)
+theme_override_fonts/font = ExtResource("2_mgrue")
+theme_override_font_sizes/font_size = 100
+text = "🍕 Rush! Olivia Crustworth wants a One large veggie pizza with extra olives .
+Note: Make sure the pizza takes the stairs twice before it rests.
+"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1392.0
+offset_top = 866.0
+offset_right = 1843.0
+offset_bottom = 1021.0
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_astx4")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ygjpb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_y7og4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jjfd7")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ul50o")
+text = "Let's Go !"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

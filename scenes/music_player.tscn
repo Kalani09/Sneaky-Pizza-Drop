@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://8ihmhq46igo7"]
+
+[ext_resource type="AudioStream" uid="uid://cicmx8xt6nhmr" path="res://assets/audio/04 Little Shop.ogg" id="1_3fdky"]
+[ext_resource type="Script" path="res://scripts/music_player.gd" id="2_a1siq"]
+
+[node name="MusicPlayer" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_3fdky")
+autoplay = true
+bus = &"Music"
+parameters/looping = false
+script = ExtResource("2_a1siq")

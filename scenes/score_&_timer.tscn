@@ -1,0 +1,75 @@
+[gd_scene load_steps=4 format=3 uid="uid://bli6pdvsy62fl"]
+
+[ext_resource type="FontFile" uid="uid://busm3u3l0qd8n" path="res://assets/ui/Kaph-Regular.otf" id="1_fb1kf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qpbkk"]
+bg_color = Color(0.0685099, 0.405555, 0.168551, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0.0687983, 0.0687983, 0.0687982, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b2mkc"]
+bg_color = Color(0.533087, 0.350105, 0.0408802, 1)
+border_width_left = 12
+border_width_top = 8
+border_width_right = 12
+border_width_bottom = 8
+border_color = Color(0.320386, 0.196469, 2.40654e-08, 1)
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="Timer Panel" type="Panel" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -21.0
+offset_top = 30.0
+offset_right = 179.0
+offset_bottom = 110.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qpbkk")
+
+[node name="ScorePanel" type="Panel" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -337.0
+offset_top = 42.0
+offset_right = -67.0
+offset_bottom = 127.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_b2mkc")
+
+[node name="TimerLabel" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 59.0
+offset_top = 46.0
+offset_right = 99.0
+offset_bottom = 93.0
+grow_horizontal = 2
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("1_fb1kf")
+theme_override_font_sizes/font_size = 40
+
+[node name="ScoreLabel" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 720.0
+offset_top = 59.0
+offset_right = 760.0
+offset_bottom = 106.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.214579, 0.595528, 0.144791, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("1_fb1kf")
+theme_override_font_sizes/font_size = 35

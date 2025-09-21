@@ -1,0 +1,125 @@
+[gd_scene load_steps=18 format=3 uid="uid://bp86jdgpg1q2u"]
+
+[ext_resource type="Texture2D" uid="uid://si4qss3uha0t" path="res://assets/sprites/Dogs-Remastered-01.png" id="1_0w3s5"]
+[ext_resource type="Script" path="res://scripts/dog.gd" id="1_noni4"]
+[ext_resource type="AudioStream" uid="uid://dtpuyym4mfqvk" path="res://assets/audio/Beast_Grunt.wav" id="3_b3wiv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fs85w"]
+atlas = ExtResource("1_0w3s5")
+region = Rect2(0, 153, 64, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uqvp0"]
+atlas = ExtResource("1_0w3s5")
+region = Rect2(64, 153, 64, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ixbxo"]
+atlas = ExtResource("1_0w3s5")
+region = Rect2(128, 153, 64, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vndi6"]
+atlas = ExtResource("1_0w3s5")
+region = Rect2(192, 153, 64, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jw4tg"]
+atlas = ExtResource("1_0w3s5")
+region = Rect2(256, 153, 64, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a6sfh"]
+atlas = ExtResource("1_0w3s5")
+region = Rect2(320, 153, 64, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tpdrg"]
+atlas = ExtResource("1_0w3s5")
+region = Rect2(384, 153, 64, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x5oqe"]
+atlas = ExtResource("1_0w3s5")
+region = Rect2(448, 153, 64, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lckpm"]
+atlas = ExtResource("1_0w3s5")
+region = Rect2(0, 305, 64, 61)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_88boy"]
+atlas = ExtResource("1_0w3s5")
+region = Rect2(64, 305, 64, 61)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_di8jj"]
+atlas = ExtResource("1_0w3s5")
+region = Rect2(128, 305, 64, 61)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gr65r"]
+atlas = ExtResource("1_0w3s5")
+region = Rect2(192, 305, 64, 61)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3vysh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fs85w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uqvp0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ixbxo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vndi6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jw4tg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a6sfh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tpdrg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x5oqe")
+}],
+"loop": true,
+"name": &"alert",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lckpm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_88boy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_di8jj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gr65r")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_547no"]
+size = Vector2(919, 12)
+
+[node name="Dog" type="Area2D"]
+script = ExtResource("1_noni4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_3vysh")
+animation = &"alert"
+autoplay = "default"
+frame_progress = 0.0407833
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-240.5, -4)
+shape = SubResource("RectangleShape2D_547no")
+
+[node name="bark" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_b3wiv")
+bus = &"SFX"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

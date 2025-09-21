@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://1ben8y346oro"]
+
+[ext_resource type="Texture2D" uid="uid://d0r0xfa7w8v5g" path="res://assets/background/Mat.png" id="1_uu1ce"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a03bw"]
+size = Vector2(34, 10)
+
+[node name="WinArea" type="Area2D"]
+position = Vector2(1, 14)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1329, 404)
+scale = Vector2(2, 2)
+texture = ExtResource("1_uu1ce")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1341, 380)
+shape = SubResource("RectangleShape2D_a03bw")
